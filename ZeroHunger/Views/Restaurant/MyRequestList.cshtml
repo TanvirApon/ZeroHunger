@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ZeroHunger.EF.Request>
+
+<p>
+    <a href="/Resturant/AddRequest" class="btn btn-success">Add Request</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.request_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.collection_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.restaurant_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.employee_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.request_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.collection_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.restaurant_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.employee_id)
+        </td>
+        <td>
+            <a href="/Resturant/ItemsInRequest/@item.id" class="btn btn-success">Watch & Edit Items Into This Request</a>
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+        </td>
+    </tr>
+}
+
+</table>

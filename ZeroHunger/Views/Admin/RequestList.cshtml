@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ZeroHunger.EF.Request>
+
+@{
+    ViewBag.Title = "RequestList";
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.request_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.collection_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.restaurant_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.employee_id)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.request_time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.collection_time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.restaurant_id)
+            </td>
+
+            @if (item.employee_id != null)
+            {
+                <td>@item.Employee.name</td>
+            }
+            else
+            {
+                <td>
+                    <a href="/Admin/AssignEmployee/@item.id" class="btn btn-success">Assign Employee</a>
+                </td>
+            }
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+

@@ -1,0 +1,53 @@
+﻿@{ ViewBag.Title = "Login Page"; }
+
+<main>
+    <form action="" method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="form-group">
+                        <label class="d-inline-block mr-2">Email:</label>
+                        <input type="text" name="email" class="form-control d-inline-block" />
+                        <span class="text-danger">@Html.ValidationMessage("email")</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="form-group">
+                        <label>Password:</label>
+                        <input type="password" name="password" class="form-control" />
+                        <span class="text-danger">@Html.ValidationMessage("password")</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="form-group">
+                        <label>Log In As:</label>
+                        <select name="usertype" class="form-control">
+                            <option disabled selected>--SELECT--</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Employee">Employee</option>
+                            <option value="Restaurant">Restaurant</option>
+                        </select>
+                        <span class="text-danger">@Html.ValidationMessage("usertype")</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="form-group text-center">
+                        <input type="submit" name="LogIn" value="Log In" class="btn btn-primary" />
+                        <br>
+                        <a href="/Home/EmployeeRegistration" class="link-success mr-2">Register As Employee</a>
+                        <a href="/Home/RestaurantRegistration" class="link-success">Register As Restaurant</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</main>
