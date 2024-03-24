@@ -16,10 +16,10 @@ namespace ZeroHunger.DTOs
         public int quantity { get; set; }
 
         // will be add some verification
+
+        [ExpireDateValidation(ErrorMessage = "Expire Date Must Be Atleast One Day Higher Then Request Date")]
         public string expiredate { get; set; }
 
-
-        [Required]
         public Nullable<int> request_id { get; set; }
     }
 }

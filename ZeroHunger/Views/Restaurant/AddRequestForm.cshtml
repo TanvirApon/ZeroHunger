@@ -1,0 +1,59 @@
+﻿@model ZeroHunger.DTOs.RequestDTO
+
+@{ ViewBag.Title = "Add Request"; }
+
+<h2>Add Request</h2>
+
+@using (Html.BeginForm("AddRequestAction", "Restaurant", FormMethod.Post))
+{
+@Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <hr />
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.request_time, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.request_time, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.request_time, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.collection_time, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.collection_time, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.collection_time, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.status, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.status, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.restaurant_id, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.restaurant_id, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.restaurant_id, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.employee_id, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.employee_id, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.employee_id, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Submit" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>}
+

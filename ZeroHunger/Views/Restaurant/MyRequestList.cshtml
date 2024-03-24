@@ -1,8 +1,11 @@
 ﻿@model IEnumerable<ZeroHunger.EF.Request>
 
 <p>
-    <a href="/Resturant/AddRequest" class="btn btn-success">Add Request</a>
+    <a href="/Restaurant/AddRequestForm" class="btn btn-success">Add Request</a>
+
+    <a href="/Restaurant/AddItem" class="btn btn-success">Add Item</a>
 </p>
+
 <table class="table">
     <tr>
         <th>
@@ -41,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.employee_id)
         </td>
         <td>
-            <a href="/Resturant/ItemsInRequest/@item.id" class="btn btn-success">Watch & Edit Items Into This Request</a>
+            <a href="/Restaurant/ItemsInRequest/@item.id" class="btn btn-success">Watch & Edit Items Into This Request</a>
             @Html.ActionLink("Details", "Details", new { id = item.id }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.id })
         </td>

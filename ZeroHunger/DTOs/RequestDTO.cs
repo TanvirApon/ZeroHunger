@@ -10,19 +10,14 @@ namespace ZeroHunger.DTOs
     {
         public int id { get; set; }
 
-        [Required]
         public string request_time { get; set; }
 
-        [Required]
         public string collection_time { get; set; }
 
-        [Required]
         public string status { get; set; }
 
-        [Required]
         public Nullable<int> restaurant_id { get; set; }
 
-        [Required]
         public Nullable<int> employee_id { get; set; }
     }
 }

@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1491d1c46b154c8dacbd8df49a71f332" Name="Diagram1">
-        <EntityTypeShape EntityType="HungerModel.Admin" Width="1.5" PointX="3.375" PointY="4.75" IsExpanded="true" />
+      <Diagram DiagramId="59daa869003948f4bea1f9a82f7b765c" Name="Diagram1">
+        <EntityTypeShape EntityType="HungerModel.Admin" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HungerModel.Employee" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="HungerModel.Item" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="HungerModel.Request" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="HungerModel.Restaurant" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HungerModel.Restaurant" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <AssociationConnector Association="HungerModel.FK_Request_Employee" ManuallyRouted="false" />
         <AssociationConnector Association="HungerModel.FK_Item_Request" ManuallyRouted="false" />
         <AssociationConnector Association="HungerModel.FK_Request_Restaurant" ManuallyRouted="false" />

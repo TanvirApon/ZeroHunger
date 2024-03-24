@@ -9,10 +9,9 @@ namespace ZeroHunger.DTOs
     public class LoginValidation
     {
         [Required]
+        [RegularExpression(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$", ErrorMessage = "Invalid email format")]
         public string email { get; set; }
 
-        [Required]
-        [RegularExpression(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$", ErrorMessage = "Invalid email format")]
         public string password { get; set; }
         [Required]
         public string usertype { get; set; }

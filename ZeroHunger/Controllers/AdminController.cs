@@ -28,7 +28,6 @@ namespace ZeroHunger.Controllers
             ViewBag.EmployeeID = db.Employees.ToList();
             return View(req);
 
-            //return RedirectToAction("RequestList");
         }
         [HttpPost]
         public ActionResult AssignEmployee(Request request)
@@ -43,6 +42,29 @@ namespace ZeroHunger.Controllers
             req.status = "Picking Up";
 
             db.SaveChanges();
+            return RedirectToAction("RequestList");
+        }
+
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            if (Session["userID"] == null)
+            {
+                return RedirectToAction("LogIn", "Home");
+            }
+
+            var db = new HungerEntities2();
+            var requestToDelete = db.Requests.Find(id);
+
+            if (requestToDelete == null)
+            {
+                return HttpNotFound(); 
+            }
+
+            db.Requests.Remove(requestToDelete);
+            db.SaveChanges();
+
             return RedirectToAction("RequestList");
         }
 

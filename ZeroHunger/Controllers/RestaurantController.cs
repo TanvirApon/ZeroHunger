@@ -23,7 +23,17 @@ namespace ZeroHunger.Controllers
             return View(db.Requests.ToList());
         }
 
+        [HttpGet]
+        public ActionResult AddRequestForm()
+        {
+            if (Session["userID"] == null)
+            {
+                return RedirectToAction("LogIn", "Home");
+            }
+            return View();
+        }
 
+        [HttpPost]
         public ActionResult AddRequest()
         {
             if (Session["userID"] == null)
@@ -34,7 +44,7 @@ namespace ZeroHunger.Controllers
 
             Request request = new Request()
             {
-                request_time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                request_time = DateTime.Now.ToString(),
                 status = "Pending",
                 restaurant_id = (int)Session["userID"]
             };

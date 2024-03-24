@@ -38,12 +38,12 @@ namespace ZeroHunger.Controllers
                     return RedirectToAction("RequestList", "Admin");
                 }
             }
-            else if (user.usertype == "Resturant")
+            else if (user.usertype == "Restaurant")
             {
-                var dbResturant = db.Restaurants.FirstOrDefault(x => x.email.Equals(user.email));
-                if (dbResturant != null && dbResturant.password.Equals(user.password))
+                var dbRestaurant = db.Restaurants.FirstOrDefault(x => x.email == user.email && x.password == user.password);
+                if (dbRestaurant != null)
                 {
-                    Session["userID"] = dbResturant.id;
+                    Session["userID"] = dbRestaurant.id;
                     return RedirectToAction("MyRequestList", "Restaurant");
                 }
             }
@@ -75,7 +75,7 @@ namespace ZeroHunger.Controllers
                 cfg.CreateMap<EmployeeDTO, Employee>();
             });
             var mapper = new Mapper(config);
-            var data = Mapper.Map<Employee>(tempEmployee);
+            var data = mapper.Map<Employee>(tempEmployee);
             #endregion
 
             db.Employees.Add(data);
@@ -99,11 +99,13 @@ namespace ZeroHunger.Controllers
                 cfg.CreateMap<ResturantDTO, Restaurant>();
             });
             var mapper = new Mapper(config);
-            var data = Mapper.Map<Restaurant>(tempResturant);
+            var data = mapper.Map<Restaurant>(tempResturant);
 
             db.Restaurants.Add(data);
+            db.SaveChanges();
             return RedirectToAction("Login");
         }
+
 
 
 
