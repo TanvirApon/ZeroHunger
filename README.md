@@ -51,10 +51,6 @@ Contributions to the Zero Hunger NGO Food Collection System are welcome! If you'
     Create a new Pull Request
 
 # Support
-
-If you encounter any issues or have any questions about the Zero Hunger NGO Food Collection System, please feel free to contact us at contact@zerohungerngo.org.
-License
-
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Thank you for your interest in contributing to our mission of reducing food waste and fighting hunger! Together, we can make a difference.
